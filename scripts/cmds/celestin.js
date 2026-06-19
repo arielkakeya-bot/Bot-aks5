@@ -70,9 +70,9 @@ function getTimeInfo(text) {
 // ================= MODULE =================
 module.exports = {
   config: {
-    name: "celestin",
+    name: "Ariel aks",
     version: "2.0",
-    author: "Celestin Olua",
+    author: "Ariel aks",
     role: 0,
     category: "ai"
   },
