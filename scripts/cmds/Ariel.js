@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 // ================= MEMORY =================
-const DB_FILE = path.join(__dirname, "celestin_memory.json");
+const DB_FILE = path.join(__dirname, "ariel_memory.json");
 
 function loadDB() {
   try {
@@ -37,7 +37,7 @@ function setUser(id, data) {
   saveDB(db);
 }
 
-// ================= STYLE =================
+
 function fancy(text = "") {
   const map = {
     a:"𝒂",b:"𝒃",c:"𝒄",d:"𝒅",e:"𝒆",
@@ -52,22 +52,22 @@ function fancy(text = "") {
     .join("");
 }
 
-// ================= TIME =================
+
 function getTimeInfo(text) {
   const now = new Date();
 
   if (text.includes("heure")) {
-    return `il est ${now.toLocaleTimeString("fr-FR", { timeZone: "Africa/Kinshasa" })}`;
+    return `il est ${now.toLocaleTimeString("fr-FR", { timeZone: "Africa/Lubumbashi" })}`;
   }
 
   if (text.includes("date")) {
-    return `on est le ${now.toLocaleDateString("fr-FR", { timeZone: "Africa/Kinshasa" })}`;
+    return `on est le ${now.toLocaleDateString("fr-FR", { timeZone: "Africa/Lubumbashi" })}`;
   }
 
   return null;
 }
 
-// ================= MODULE =================
+
 module.exports = {
   config: {
     name: "Ariel aks",
@@ -88,7 +88,7 @@ module.exports = {
     const lower = body.toLowerCase();
 
     // 🔒 activation uniquement si "celestin"
-    if (!lower.startsWith("celestin")) return;
+    if (!lower.startsWith("Ariel")) return;
 
     const input = body.slice(8).trim();
     const uid = event.senderID;
@@ -114,7 +114,7 @@ module.exports = {
 
     try {
       const prompt = `
-Tu es CÉLESTIN créé par l'unique Célestin olua
+Tu es itachi Uchiwa créé par l'unique Ariel Aks 
 Tu réponds naturellement tu dois expliqué t'es détails etc, humain, un peu calme.
 Pas trop enthousiaste. T'y dois toujours terminé t'a phrase. 
 
