@@ -2,8 +2,8 @@ const fs = require("fs-extra");
 const { config } = global.GoatBot;
 const { client } = global;
 
-// 🌸 CADRE NEO
-function frameNeo(text) {
+// 🌸 CADRE Ariel 
+function frameariel(text) {
   return `
 🌸 ࿇ ══━━✥🌺✥━━══ ࿇ 🌸
 
@@ -20,7 +20,7 @@ config: {
 name: "adminonly",
 aliases: ["adonly", "onlyad", "onlyadmin"],
 version: "2.0",
-author: "Célestin Olua",
+author: "Ariel",
 countDown: 5,
 role: 2,
 description: {
@@ -36,10 +36,10 @@ fr:
 
 langs: {
 fr: {
-turnedOn: frameNeo("👑 Le mode ROYAL est activé.\n✨ Seuls les administrateurs peuvent utiliser le bot."),
-turnedOff: frameNeo("🌿 Le mode royal est désactivé.\n✨ Tous les membres peuvent utiliser le bot."),
+turnedOn: frameariel("👑 Le mode ROYAL est activé.\n✨ Seuls les administrateurs peuvent utiliser le bot."),
+turnedOff: frameariel("🌿 Le mode royal est désactivé.\n✨ Tous les membres peuvent utiliser le bot."),
 turnedOnNoti: frameNeo("🔔 Les notifications sont activées.\n👑 Les non-admins seront avertis."),
-turnedOffNoti: frameNeo("🔕 Les notifications sont désactivées.\n🌿 Le silence règne à nouveau.")
+turnedOffNoti: frameariel("🔕 Les notifications sont désactivées.\n🌿 Le silence règne à nouveau.")
 }
 },
 
@@ -58,7 +58,7 @@ if (args[indexGetVal] == "on")
 else if (args[indexGetVal] == "off")
 	value = false;
 else
-	return message.reply(frameNeo("⚠️ Commande invalide.\n👑 Utilise : adminonly on/off"));
+	return message.reply(frameariel("⚠️ Commande invalide.\n👑 Utilise : adminonly on/off"));
 
 if (isSetNoti) {
 	config.hideNotiMessage.adminOnly = !value;
