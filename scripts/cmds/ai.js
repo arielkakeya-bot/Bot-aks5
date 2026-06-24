@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "ai",
     version: "1.0",
-    author: "Célestin Olua",
+    author: "Ariel akd",
     role: 0,
     category: "ai",
     shortDescription: "Intercepte 'Ai' et informe sur les préfixes",
