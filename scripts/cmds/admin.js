@@ -2,7 +2,7 @@ const { config } = global.GoatBot;
 const { writeFileSync } = require("fs-extra");
 
 // 🌸 STYLE CADRE
-function neo(text) {
+function ariel(text) {
 	return `
 🌸 ══━━✥🌺✥━━══ 🌸
 
@@ -16,7 +16,7 @@ module.exports = {
 	config: {
 		name: "admin",
 		version: "2.0",
-		author: "NTKhang + Celestin 👑",
+		author: "NTKhang + Ariel aks👑",
 		countDown: 5,
 		role: 2,
 		description: {
@@ -87,7 +87,7 @@ module.exports = {
 			case "remove":
 			case "-r": {
 				if (!args[1])
-					return message.reply(neo(getLang("missingIdRemove")));
+					return message.reply(ariel(getLang("missingIdRemove")));
 
 				let uids = [];
 				if (Object.keys(event.mentions).length > 0)
@@ -140,7 +140,7 @@ module.exports = {
 
 			// ================= DEFAULT =================
 			default:
-				return message.reply(neo("⚠️ Commande inconnue"));
+				return message.reply(Ariel ("⚠️ Commande inconnue"));
 		}
 	}
 };
