@@ -4,7 +4,7 @@ const path = require("path");
 const googleTTS = require("google-tts-api");
 
 // 📦 MEMORY
-const DB_FILE = path.join(__dirname, "neo_memory.json");
+const DB_FILE = path.join(__dirname, "ariel_memory.json");
 
 // 🧠 MEMORY 4 DAYS
 const MEMORY_DAYS = 4;
@@ -56,7 +56,7 @@ function setMem(id, data) {
 // 🕒 TIME
 function getTime() {
   return new Date().toLocaleString("fr-FR", {
-    timeZone: "Africa/Kinshasa"
+    timeZone: "Africa/Lubumbashi"
   });
 }
 
@@ -92,8 +92,8 @@ ${text}
 // 🤖 AI
 async function askAI(prompt, mem, uid) {
   const fullPrompt = `
-Tu es NEO IA
-Tu es créée par Célestin Olua 🇨🇩.
+Tu es Ariel IA
+Tu es créée par Ariel Aks 🇨🇩.
 
 Règles:
 - Réponds normalement
@@ -129,13 +129,13 @@ ${prompt}
 
     return res.data?.reply || res.data?.message || "NEO actif.";
   } catch {
-    return "NEO actif.";
+    return "Ariel actif.";
   }
 }
 
 module.exports = {
   config: {
-    name: "neo",
+    name: "Ariel",
     version: "10.4.0",
     role: 0,
     category: "ai"
@@ -198,7 +198,7 @@ module.exports = {
         });
 
         const res = await axios.get(url, { responseType: "arraybuffer" });
-        const file = path.join(__dirname, "neo.mp3");
+        const file = path.join(__dirname, "Ariel.mp3");
 
         fs.writeFileSync(file, Buffer.from(res.data));
 
@@ -214,7 +214,7 @@ module.exports = {
       return message.reply(frame(clean));
 
     } catch {
-      return message.reply(frame("NEO actif."));
+      return message.reply(frame("Ariel actif."));
     }
   }
 };
