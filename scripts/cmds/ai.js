@@ -1,43 +1,36 @@
 module.exports = {
   config: {
     name: "ai",
+    aliases: ["chat", "question"],
     version: "1.0",
-    author: "Célestin Olua",
+    author: "Ariel Aks",
+    countDown: 2,
     role: 0,
-    category: "ai",
-    shortDescription: "Intercepte 'Ai' et informe sur les préfixes",
-    guide: "Écrivez simplement Ai pour recevoir le message"
+    shortDescription: {
+      en: "AI Command"
+    },
+    longDescription: {
+      en: "AI reply system for Ariel Bot"
+    },
+    category: "general",
+    guide: {
+      en: "{pn} - Get info about the bot"
+    }
   },
 
-  onStart: async function({ message }) {
-    return;
+  onStart: async function ({ api, event }) {
+    const { threadID } = event;
+    return api.sendMessage(`✅ This bot was created by **Ariel Aks** 🤖`, threadID);
   },
 
-  onChat: async function({ event, message }) {
-    const userMsg = event.body?.trim();
-    if (!userMsg) return;
+  onChat: async function ({ api, event }) {
+    const { body, threadID } = event;
+    const message = body.toLowerCase();
 
-    const text = userMsg
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .trim()
-      .toLowerCase();
-
-    if (text.startsWith("ai")) {
-      return message.reply(
-`࿇ ══━━✥🌸✥━━══ ࿇
-⚡ IA INDISPONIBLE
-
-🛠️ Pour accéder à l’intelligence artificielle :
-👉 utilisez les commandes : neo ou flash
-
-💡 Exemples :
-• neo salut
-• flash bonjour
-
-✨ Système actif, mais accès direct bloqué
-࿇ ══━━✥🌸✥━━══ ࿇`
-      );
+    // Si le message contient "ai" ou "AI"
+    if (message.includes("ai") || message.includes("ai?")) {
+      return api.sendMessage(`✅ This bot was created by **Ariel Aks** 🤖`, threadID);
     }
   }
 };
+
